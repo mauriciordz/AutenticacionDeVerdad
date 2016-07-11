@@ -3,7 +3,8 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |u|
       u.string :usuario, :unique => true
       u.string :mail,  :unique => true
-      u.string :password
+      u.string :password_digest
+
       u.timestamps
       end
     end

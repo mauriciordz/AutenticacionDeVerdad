@@ -2,7 +2,7 @@ before '/secret' do
   if session[:email]
     erb :secret
   else
-    erb :logout
+    erb :index
   end
 
 end
@@ -11,7 +11,7 @@ end
 get '/' do
   # La siguiente linea hace render de la vista 
   # que esta en app/views/index.erb
-  session.clear
+  # session.clear
   erb :index_user
   
 end
@@ -21,6 +21,11 @@ get '/register_temp' do
   erb :register
 
 end
+
+get '/otro_secret' do 
+  erb :otro_secret
+end
+
 
 get '/login_temp' do
   erb :login
